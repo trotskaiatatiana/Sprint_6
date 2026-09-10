@@ -33,7 +33,6 @@ class OrderPage(BasePage):
 
         self.click_element_with_wait(OrderPageLocators.ORDER_BUTTON)
 
-    
     @allure.step("Подтвердить заказ")
     def confirm_order(self):
         self.click_element_with_wait(OrderPageLocators.YES_BUTTON)

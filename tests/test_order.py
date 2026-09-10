@@ -47,9 +47,9 @@ class TestOrder:
 
         order_page = OrderPage(driver)
 
-        order_page.fill_first_order_form (name, surname, address, metro, phone)
+        order_page.fill_first_order_form(name, surname, address, metro, phone)
 
-        order_page.fill_second_order_form (date, period, color, comment)
+        order_page.fill_second_order_form(date, period, color, comment)
 
         order_page.confirm_order()
 
@@ -76,7 +76,6 @@ class TestLogos:
         order_page = OrderPage(driver)
         order_page.click_yandex_logo()
         order_page.switch_to_new_window()
-
         order_page.wait_url(Urls.DZEN_URL)
 
-        assert driver.current_url.startswith(Urls.DZEN_URL)
+        assert order_page.get_current_url().startswith(Urls.DZEN_URL)
